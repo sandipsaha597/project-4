@@ -1,6 +1,12 @@
 import { useMovieSearch } from '../hooks/useMovieSearch'
 import { MovieSearchContext } from './MovieSearchContext'
 
+/**
+ * MovieSearchProvider
+ * This component wraps children with a context provider for movie search functionality.
+ * It uses the `useMovieSearch` hook to manage state and expose necessary data and methods.
+ *
+ */
 const MovieSearchProvider = ({ children }) => {
   const {
     loading,
@@ -11,6 +17,7 @@ const MovieSearchProvider = ({ children }) => {
     setSearchValue,
     loadMore,
   } = useMovieSearch()
+
   return (
     <MovieSearchContext.Provider
       value={{
